@@ -1,11 +1,11 @@
 # Geonputer
 
-### 컴파일러론, 컴퓨터 구조론, 운영체제론을 학습하고 이 지식을 이용해 나만의 프로그래밍 언어로 작성된 프로그램을 실행할 수 있는 컴퓨터 시스템을 구현한 프로젝트 💻
+### 컴파일러론, 컴퓨터 구조론, 운영체제론을 학습하고 이 지식을 이용해 나만의 프로그래밍 언어인 GeonSsembly Language로 작성된 프로그램을 실행할 수 있는 컴퓨터 시스템을 구현한 프로젝트 💻
 #### CPU Architecture : RISC 기반, I/O Device - CPU 통신 방식 : Memory Mapped I/O
 **GeonSsembly Language**에 대한 문법 정의와 소스코드는 [여기](https://github.com/DryRains/Geonputer-Documents)를 참고
 
 프로그램의 흐름은 아래와 같다.
-1. 프로그램 실행 후 1번을 눌러 Disk_SourceCode 내에 컴파일할 소스코드 선택 (소스코드는 어셈블리어를 기반으로 한 나만의 커스텀 언어인 GeonSsembly Language로 작성되어 있다.)
+1. 프로그램 실행 후 1번을 눌러 Disk_SourceCode 내에 컴파일할 소스코드 선택 (소스코드는 GeonSsembly Language로 작성되어 있다.)
 2. Lexer & Parser가 이 토큰들을 뜯어내고 SymbolTable을 통해 Parse Tree Node에 추가해가며 문장 구조를 만들어내고,
 3. Code Generator가 이 문장들을 16진수의 기계어로 번역한다.
 4. 이후 Linker는 이 변환된 기계어를 받아 Disk_Program 폴더에 실행 가능한 파일로 저장한다.
