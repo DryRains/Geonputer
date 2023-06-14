@@ -13,7 +13,7 @@
 6. Loader는 선택한 파일을 메모리에 적당한 공간을 할당해주며 프로세스의 형태로 올리게 되고 CPU가 instruction Cycle을 돌면서 해당 프로세스의 Code Segment를 한줄씩 읽어 해석 & 실행한다.
 <br><br>
 
-*2번을 눌러 프로그램을 실행할 때 Non-Blocking Mode와 Blocking Mode 두가지 방식중 하나를 선택해서 실행할 수 있다.<br><br>
+*5번에서 Non-Blocking Mode와 Blocking Mode 두가지 방식중 하나를 선택해서 실행할 수 있다.<br><br>
 **Non-Blocking Mode** : CPU가 Insturction Cycle을 수행하는 동안 사용자는 이와 별개로 키보드 입력을 통해 I/O Inturrupt를 발생시킬 수 있는 모드이다.<br>
 's'를 누르면 메모리에 붙어있는 I/O Buffer에 이 입력이 쌓이게 되고 CPU는 한 사이클을 마치고 I/O Buffer에 인터럽트가 들어와 있는지 체킹한다. 이 경우 's' 라는 사용자의 인터럽트가 들어와서 'Context Switching'을 수행한다.<br>
 Context Switching이 수행되면 위의 5번과 동일하게 실행할 프로그램을 선택하는 창이 뜨고, 현재 실행중이던 프로그램의 정보들을 임시 저장하고 만일 내가 선택한 파일이 기존에 실행중이던 프로그램이면 임시 저장된 정보들을 가져와 이전에 진행중이던 작업을 이어서 수행, 
