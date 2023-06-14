@@ -6,7 +6,7 @@
 
 프로그램의 흐름은 아래와 같다.
 1. 프로그램 실행 후 1번을 눌러 Disk_SourceCode 내에 컴파일할 소스코드 선택 (소스코드는 GeonSsembly Language로 작성되어 있다.)
-2. Lexer & Parser가 이 토큰들을 뜯어내고 SymbolTable을 통해 Parse Tree Node에 추가해가며 문장 구조를 만들어내고,
+2. Lexer & Parser가 소스코드로부터 토큰들을 뜯어내고 SymbolTable을 통해 Parse Tree Node에 추가해가며 문장 구조를 만들어낸다.
 3. Code Generator가 이 문장들을 16진수의 기계어로 번역한다.
 4. 이후 Linker는 이 변환된 기계어를 받아 Disk_Program 폴더에 실행 가능한 파일로 저장한다.
 5. 프로그램을 다시 실행 후 2번을 눌러 실행할 파일을 선택
