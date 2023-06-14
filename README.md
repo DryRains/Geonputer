@@ -10,7 +10,7 @@
 3. Code Generator가 이 문장들을 16진수의 기계어로 번역한다.
 4. 이후 Linker는 이 변환된 기계어를 받아 Disk_Program 폴더에 실행 가능한 파일로 저장한다.
 5. 프로그램을 다시 실행 후 2번을 눌러 실행할 파일을 선택
-6. Loader는 선택한 파일을 메모리에 적당한 공간을 할당해주며 프로세스의 형태로 올리게 되고 CPU가 instruction Cycle을 돌면서 해당 프로세스의 Code Segment를 한줄씩 읽어 해석 & 실행한다.
+6. Loader는 선택한 파일을 메모리에 적당한 페이지 & 각 세그먼트 사이즈를 할당하여 프로세스의 형태로 올리게 되고 CPU가 instruction Cycle을 돌면서 해당 프로세스의 Code Segment를 한줄씩 읽어 해석 및 실행한다.
 <br><br>
 
 *5번에서 Non-Blocking Mode와 Blocking Mode 두가지 방식중 하나를 선택해서 실행할 수 있다.<br><br>
