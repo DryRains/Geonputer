@@ -1,0 +1,68 @@
+.header
+int num
+int result
+object student
+.code
+//int num = 2
+LOD 2
+STO @num
+//student.kor variable -> into heap seg
+NEWINT student.*kor
+//student.kor variable = 60
+LOD 60
+STO student.*kor
+//student.eng
+NEWINT student.*eng
+LOD 50
+STO student.*eng
+JMP getAverageFunction
+:copyToResult
+//result = student.getAverage() in main()
+LOD #returnValue
+STO @result
+//getAverage's stack frame(Activation record) remove 
+STF #returAddress
+PRT @result
+HALT
+:getAverageFunction
+//Dinamic Link
+DL #returnAddress
+//PUSH Local Variables
+PUSHINT #returnValue
+PUSHINT #number
+PUSHINT #sum
+PUSHINT #average
+//link parameter - global variable
+LOD @num
+STO #number
+//sum = this.kor+this.eng
+LOD student.*kor
+ADD student.*eng
+STO #sum
+//call inner function
+JMP calculateAverageFunction
+:getAverageReturn
+//int average = calculateAverage();
+LOD #innerReturnValue
+STO #average
+STF #innerReturnAddress
+//return average
+LOD #average
+STO #returnValue
+//jump to main()
+JMP copyToResult
+calculateAverageFunction:
+DL #innerReturnAddress
+PUSHINT #innerReturnValue
+PUSHINT #paramSum
+PUSHINT #paramNum
+LOD #sum
+STO #paramSum
+LOD #number
+STO #paramNum
+//return paramSum/paramNum
+LOD #paramSum
+DIV #paramNum
+STO #innerReturnValue
+JMP getAverageReturn
+.end

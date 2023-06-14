@@ -1,0 +1,11 @@
+.header
+int a
+int no
+object go
+.code
+PUSHINT #bs
+LOD #bs
+PUSHINT #SS
+LOD #SS
+NEWINT go.*name
+.end

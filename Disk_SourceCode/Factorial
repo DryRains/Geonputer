@@ -1,0 +1,47 @@
+.header
+int num
+int result
+.code
+//int num = scanner.nextInt
+INP
+STO @num
+JMP factorialFunction
+:copyToResult
+// result = factorial(num);
+LOD #returnValue
+STO @result
+// factorial's stack frame(Activation record) remove 
+STF #returnAddress
+PRT @result
+HALT
+:factorialFunction
+DL #returnAddress
+PUSHINT #returnValue
+PUSHINT #n
+LOD @num
+STO #n
+:recursiveLoop
+LOD #n
+SUB 1
+STO #returnValue
+//if(n==1) then return
+LOD #n
+SUB 1
+STO #n
+LOD #n
+EQ 1
+EZJ returnLoop
+JMP recursiveLoop
+:returnLoop
+// return 1
+LOD #returnValue
+MUL #n
+STO #returnValue
+LOD #n
+EQ @num
+EZJ copyToResult
+LOD #n
+ADD 1
+STO #n
+JMP returnLoop
+.end
