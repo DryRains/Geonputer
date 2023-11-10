@@ -1,6 +1,5 @@
 # Geonputer
 ### A project that implements a computer system that can execute programs written in my own programming language using knowledge of compiler theory, computer structure theory, and operating system theory
-<br>
 ### 컴파일러론, 컴퓨터 구조론, 운영체제론을 학습하고 이 지식을 이용해 나만의 프로그래밍 언어로 작성된 프로그램을 실행할 수 있는 컴퓨터 시스템을 구현한 프로젝트 💻
 #### CPU Architecture : RISC 기반, I/O Device - CPU 통신 방식 : Memory Mapped I/O
 **Source Code : GeonSsembly Language**(어셈블리어를 기반으로 만든 언어). 해당 언어의 문법 정의와 해당 언어로 만든 소스코드 예시는 [여기](https://github.com/DryRains/Geonputer-Documents)를 참고
